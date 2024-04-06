@@ -79,6 +79,18 @@
 #include "gameState.h"
 #include "score.h"
 
+bool checkLevelCompletion() {
+    for (int i = 0; i < BRICK_ROWS; i++) {
+        for (int j = 0; j < BRICKS_PER_ROW; j++) {
+            // If there's at least one brick that's neither indestructible nor "none", the level isn't complete
+            if (bricks[i][j].type != BRICK_INDESTRUCTIBLE && bricks[i][j].type != BRICK_NONE) {
+                return false; // Level is not complete
+            }
+        }
+    }
+    return true; // No destructible bricks left, level is complete
+}
+
 void handleCollisionWithBricks() {
     bool collisionDetected = false;
     int hitsRequiredForHardBrick = 2; // Default for rounds 1 to 8
@@ -157,7 +169,7 @@ collisionHandled:
         }
 
         //Load the next level if all bricks are cleared
-        if (levelCleared) {
+        if (collisionDetected && checkLevelCompletion()) {
             loadNextLevel();
         }
     }
