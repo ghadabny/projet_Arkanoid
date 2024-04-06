@@ -1,0 +1,3 @@
+/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles/Arkanoid.dir
+/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles/edit_cache.dir
+/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles/rebuild_cache.dir
