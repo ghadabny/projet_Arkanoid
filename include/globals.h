@@ -19,11 +19,21 @@ typedef enum {
     BRICK_INDESTRUCTIBLE,
 } BrickType;
 
+// typedef struct {
+//     BrickType type;
+//     int hitCount;
+//     int color;
+// } Brick;
+
 typedef struct {
-    BrickType type;
-    int hitCount;
-    int color;
+    BrickType type;  // Type of the brick (normal, hard, indestructible)
+    int hitCount;    // Number of hits the brick has taken (for hard bricks)
+    int color;       // Color index or identifier for the brick
+    bool shouldAnimate; // Flag to indicate whether the brick should animate
+    int animationFrame;
+    int animationCounter; // Current frame of the animation
 } Brick;
+
 
 typedef struct {
     double x;

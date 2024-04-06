@@ -1298,6 +1298,8 @@ CMakeFiles/Arkanoid.dir/src/render.c.o: ../src/render.c \
   /usr/include/SDL2/SDL_misc.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   ../include/globals.h \
+  ../include/gameState.h \
+  ../include/physics.h \
   ../include/gameState.h
 
 CMakeFiles/Arkanoid.dir/src/score.c.o: ../src/score.c \

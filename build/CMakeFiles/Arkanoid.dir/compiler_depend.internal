@@ -1305,6 +1305,8 @@ CMakeFiles/Arkanoid.dir/src/render.c.o
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h
  /home/ghada/CNAM/C/TP/Arkanoid/include/globals.h
  /home/ghada/CNAM/C/TP/Arkanoid/include/gameState.h
+ /home/ghada/CNAM/C/TP/Arkanoid/include/physics.h
+ /home/ghada/CNAM/C/TP/Arkanoid/include/gameState.h
 
 CMakeFiles/Arkanoid.dir/src/score.c.o
  /home/ghada/CNAM/C/TP/Arkanoid/src/score.c

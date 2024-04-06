@@ -1,6 +1,6 @@
 #include "render.h"
 #include "gameState.h"
-//#include "score.h"
+#include "physics.h"
 
 
 
@@ -20,12 +20,22 @@ SDL_Rect srcRectsNormalBrick[] = {
 
 SDL_Rect srcRectsHardBrick[] = {
     
-	{0, BRICK_HEIGHT*2, BRICK_WIDTH, BRICK_HEIGHT}
+	{0, BRICK_HEIGHT*2, BRICK_WIDTH, BRICK_HEIGHT}, 
+	{BRICK_WIDTH, BRICK_HEIGHT*2, BRICK_WIDTH, BRICK_HEIGHT},
+	{BRICK_WIDTH*2, BRICK_HEIGHT*2, BRICK_WIDTH, BRICK_HEIGHT},
+    {BRICK_WIDTH*3, BRICK_HEIGHT*2, BRICK_WIDTH, BRICK_HEIGHT},
+	{BRICK_WIDTH*4, BRICK_HEIGHT*2, BRICK_WIDTH, BRICK_HEIGHT},
+	{BRICK_WIDTH*5, BRICK_HEIGHT*2, BRICK_WIDTH, BRICK_HEIGHT}
 };
 
 SDL_Rect srcRectsIndestructableBrick[] = {
     
-	{0, BRICK_HEIGHT*3, BRICK_WIDTH, BRICK_HEIGHT}
+	{0, BRICK_HEIGHT*3, BRICK_WIDTH, BRICK_HEIGHT}, 
+	{BRICK_WIDTH, BRICK_HEIGHT*3, BRICK_WIDTH, BRICK_HEIGHT},
+	{BRICK_WIDTH*2, BRICK_HEIGHT*3, BRICK_WIDTH, BRICK_HEIGHT},
+    {BRICK_WIDTH*3, BRICK_HEIGHT*3, BRICK_WIDTH, BRICK_HEIGHT},
+	{BRICK_WIDTH*4, BRICK_HEIGHT*3, BRICK_WIDTH, BRICK_HEIGHT},
+	{BRICK_WIDTH*5, BRICK_HEIGHT*3, BRICK_WIDTH, BRICK_HEIGHT}
 };
 
 SDL_Rect srcBackgrounds[] = {
@@ -105,43 +115,86 @@ void draw()
 }
 
 
-void drawBricks() {
+// void drawBricks() {
+//     for (int i = 0; i < BRICK_ROWS; i++) {
+//         for (int j = 0; j < BRICKS_PER_ROW; j++) {
+//             if (bricks[i][j].type != BRICK_NONE && bricks[i][j].color >= 0) {
+//                 SDL_Rect brickRect = { j * BRICK_WIDTH, i * BRICK_HEIGHT, BRICK_WIDTH, BRICK_HEIGHT };
+                
+//                 SDL_Rect srcRect = srcRectsNormalBrick[bricks[i][j].color];
+                
+
+
+                
+//                 SDL_BlitSurface(brickSpriteSheet, &srcRect, win_surf, &brickRect);
+//             }
+            
+//         }
+//     }
+// }
+
+
+
+// Place this in a globally accessible location
+
+void updateAnimations() {
+    const int FRAME_DELAY = 3; // Number of frames to wait before switching to the next animation frame
+
     for (int i = 0; i < BRICK_ROWS; i++) {
         for (int j = 0; j < BRICKS_PER_ROW; j++) {
-            if (bricks[i][j].type != BRICK_NONE && bricks[i][j].color >= 0) {
-                SDL_Rect brickRect = { j * BRICK_WIDTH, i * BRICK_HEIGHT, BRICK_WIDTH, BRICK_HEIGHT };
+            Brick *brick = &bricks[i][j];
+            if (brick->type == BRICK_HARD && brick->shouldAnimate||brick->type == BRICK_INDESTRUCTIBLE && brick->shouldAnimate) {
+                brick->animationCounter++;
                 
-                SDL_Rect srcRect = srcRectsNormalBrick[bricks[i][j].color];
-                
-
-
-                
-                SDL_BlitSurface(brickSpriteSheet, &srcRect, win_surf, &brickRect);
+                if (brick->animationCounter >= FRAME_DELAY) {
+                    // Reset counter
+                    brick->animationCounter = 0;
+                    
+                    // Move to the next frame
+                    brick->animationFrame++;
+                    
+                    // Check if the animation sequence is complete
+                    if (brick->animationFrame >= sizeof(srcRectsHardBrick) / sizeof(SDL_Rect)) {
+                        brick->animationFrame = 0; // Optionally loop or stop animating
+                        brick->shouldAnimate = false; // Consider stopping the animation
+                    }
+                }
             }
-            // if (bricks[i][j].type != BRICK_NONE)
-            // {
-            //     if (bricks[i][j].type = BRICK_NORMAL && bricks[i][j].color >= 0)
-            //     {
-            //         SDL_Rect brickRect = { j * BRICK_WIDTH, i * BRICK_HEIGHT, BRICK_WIDTH, BRICK_HEIGHT };
-                
-            //         SDL_Rect srcRect = srcRectsNormalBrick[bricks[i][j].color];
-
-            //     }
-            //     else if (bricks[i][j].type = BRICK_HARD)
-            //     {
-            //         SDL_Rect brickRect = { j * BRICK_WIDTH, i * BRICK_HEIGHT, BRICK_WIDTH, BRICK_HEIGHT };
-                
-            //         SDL_Rect srcRect = srcRectsHardBrick[bricks[i][j].color];
-            //     }
-            //     else if (bricks[i][j].type = BRICK_INDESTRUCTIBLE)
-            //     {
-            //         SDL_Rect brickRect = { j * BRICK_WIDTH, i * BRICK_HEIGHT, BRICK_WIDTH, BRICK_HEIGHT };
-                
-            //         SDL_Rect srcRect = srcRectsIndestructableBrick[bricks[i][j].color];
-            //     }
-                
-            // }
-            
         }
     }
 }
+
+
+
+void drawBricks() {
+    for (int i = 0; i < BRICK_ROWS; i++) {
+        for (int j = 0; j < BRICKS_PER_ROW; j++) {
+            Brick *brick = &bricks[i][j];
+            if (brick->type == BRICK_NONE) continue;
+
+            SDL_Rect brickRect = {j * BRICK_WIDTH, i * BRICK_HEIGHT + SCOREBOARD_HEIGHT, BRICK_WIDTH, BRICK_HEIGHT};
+            SDL_Rect srcRect ;
+
+            switch (brick->type) {
+                case BRICK_NORMAL:
+                    srcRect = srcRectsNormalBrick[brick->color];
+                    break;
+                case BRICK_HARD:
+                    srcRect = srcRectsHardBrick[brick->animationFrame % 6]; // Use animation frame without updating it here
+                    break;
+                case BRICK_INDESTRUCTIBLE:
+                    srcRect = srcRectsIndestructableBrick[brick->animationFrame % 6];
+                    break;
+            }
+
+            SDL_BlitSurface(brickSpriteSheet, &srcRect, win_surf, &brickRect);
+        }
+    }
+}
+
+
+
+
+
+
+

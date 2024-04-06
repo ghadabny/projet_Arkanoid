@@ -14,5 +14,6 @@ extern SDL_Rect srcBackgrounds[];
 
 void draw();
 void drawBricks();
+void updateAnimations();
 
 #endif // RENDER_H

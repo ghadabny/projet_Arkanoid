@@ -58,8 +58,10 @@ int main(int argc, char** argv) {
         if (x_vault > win_surf->w - scrVaiss.w) {
             x_vault = win_surf->w - scrVaiss.w; // Prevent moving beyond the right edge
         }
-
+        
+        updateAnimations();
         handleCollisionWithBricks();
+       
         draw();
         
         // SDL_Rect scoreArea = {100, 10, 10 * FONT_WIDTH, FONT_HEIGHT};  // Adjust the width as needed

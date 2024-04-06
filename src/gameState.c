@@ -29,34 +29,40 @@ void loadLevel() {
         exit(1);
     }
 
-    char brickTypeChar, colorChar;
-    int row = 0, col = 0;
-    while ((fscanf(levelFile, "%c%c", &brickTypeChar, &colorChar) != EOF) && row < BRICK_ROWS) {
-        if (brickTypeChar == '\n') { // New line
-            row++;
-            col = 0;
-            continue; // Skip to the next iteration
-        }
+    char line[BRICKS_PER_ROW * 2 + 2]; // Assuming 2 characters per brick, +2 for potential newline and null terminator
+    int row = 0;
 
-        // Determine the brick type and color
-        if (brickTypeChar == '1') {
-            bricks[row][col].type = BRICK_NORMAL;
-            bricks[row][col].color = colorLetterToIndex(colorChar);
-        }
-        if (brickTypeChar == '2') {
-            bricks[row][col].type = BRICK_HARD;
-            //bricks[row][col].color = colorLetterToIndex(colorChar);
-        }
-        if (brickTypeChar == '3') {
-            bricks[row][col].type = BRICK_INDESTRUCTIBLE;
-            //bricks[row][col].color = colorLetterToIndex(colorChar);
-        }
+    while (fgets(line, sizeof(line), levelFile) != NULL && row < BRICK_ROWS) {
+        int col = 0;
+        for (int i = 0; line[i] != '\0' && col < BRICKS_PER_ROW; i += 2) {
+            // Skip newline characters
+            if (line[i] == '\n' || line[i] == '\r') {
+                continue;
+            }
 
-        col++;
-        if (col >= BRICKS_PER_ROW) {
-            col = 0;
-            if (brickTypeChar != '\n') row++; // Move to next row if not at line end
+            char brickTypeChar = line[i];
+            char colorChar = line[i + 1];
+
+            // Determine the brick type and color
+            switch (brickTypeChar) {
+                case '1':
+                    bricks[row][col].type = BRICK_NORMAL;
+                    bricks[row][col].color = colorLetterToIndex(colorChar);
+                    break;
+                case '2':
+                    bricks[row][col].type = BRICK_HARD;
+                    break;
+                case '3':
+                    bricks[row][col].type = BRICK_INDESTRUCTIBLE;
+                    break;
+                default:
+                    // Handle unexpected brickTypeChar if necessary
+                    break;
+            }
+
+            col++;
         }
+        row++;
     }
 
     fclose(levelFile);
