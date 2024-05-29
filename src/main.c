@@ -4,6 +4,7 @@
 #include "physics.h"
 #include "gameState.h"
 #include "score.h"
+#include "powerup.h"
 
 
 
@@ -15,6 +16,7 @@ int main(int argc, char** argv) {
 
     init();
     initializeScore();
+    initializePowerUps();
     loadLevel();
     
     
@@ -51,6 +53,10 @@ int main(int argc, char** argv) {
             x_vault += 10;
         }
 
+        updateAnimations();
+        handleCollisionWithBricks();
+        updatePowerUps();
+
         // Bounds checking for paddle movement
         if (x_vault < 0) {
             x_vault = 0; // Prevent moving beyond the left edge
@@ -59,19 +65,12 @@ int main(int argc, char** argv) {
             x_vault = win_surf->w - scrVaiss.w; // Prevent moving beyond the right edge
         }
         
-        updateAnimations();
-        handleCollisionWithBricks();
+        
+
+        SDL_FillRect(win_surf, NULL, SDL_MapRGB(win_surf->format, 0, 0, 0));
        
         draw();
-        
-        // SDL_Rect scoreArea = {100, 10, 10 * FONT_WIDTH, FONT_HEIGHT};  // Adjust the width as needed
-        // SDL_FillRect(win_surf, &scoreArea, SDL_MapRGB(win_surf->format, 0, 0, 0));  // Assuming black is the background color
-        // drawScore(win_surf, currentScore, 100, 10); // Draw current score at position (100,10)
-
-        // scoreArea.x = win_surf->w - 100 - 10 * FONT_WIDTH;  // Adjust for the high score display
-        // SDL_FillRect(win_surf, &scoreArea, SDL_MapRGB(win_surf->format, 0, 0, 0));  // Fill again for high score
-        // drawScore(win_surf, highScore, win_surf->w - 100, 10); // Draw high score
-
+        renderPowerUps();
         drawScoreboard(win_surf, currentScore, highScore);
 
         SDL_UpdateWindowSurface(pWindow);

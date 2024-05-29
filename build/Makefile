@@ -201,6 +201,30 @@ src/init.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arkanoid.dir/build.make CMakeFiles/Arkanoid.dir/src/init.c.s
 .PHONY : src/init.c.s
 
+src/laser.o: src/laser.c.o
+.PHONY : src/laser.o
+
+# target to build an object file
+src/laser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arkanoid.dir/build.make CMakeFiles/Arkanoid.dir/src/laser.c.o
+.PHONY : src/laser.c.o
+
+src/laser.i: src/laser.c.i
+.PHONY : src/laser.i
+
+# target to preprocess a source file
+src/laser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arkanoid.dir/build.make CMakeFiles/Arkanoid.dir/src/laser.c.i
+.PHONY : src/laser.c.i
+
+src/laser.s: src/laser.c.s
+.PHONY : src/laser.s
+
+# target to generate assembly for a file
+src/laser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arkanoid.dir/build.make CMakeFiles/Arkanoid.dir/src/laser.c.s
+.PHONY : src/laser.c.s
+
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -248,6 +272,30 @@ src/physics.s: src/physics.c.s
 src/physics.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arkanoid.dir/build.make CMakeFiles/Arkanoid.dir/src/physics.c.s
 .PHONY : src/physics.c.s
+
+src/powerup.o: src/powerup.c.o
+.PHONY : src/powerup.o
+
+# target to build an object file
+src/powerup.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arkanoid.dir/build.make CMakeFiles/Arkanoid.dir/src/powerup.c.o
+.PHONY : src/powerup.c.o
+
+src/powerup.i: src/powerup.c.i
+.PHONY : src/powerup.i
+
+# target to preprocess a source file
+src/powerup.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arkanoid.dir/build.make CMakeFiles/Arkanoid.dir/src/powerup.c.i
+.PHONY : src/powerup.c.i
+
+src/powerup.s: src/powerup.c.s
+.PHONY : src/powerup.s
+
+# target to generate assembly for a file
+src/powerup.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arkanoid.dir/build.make CMakeFiles/Arkanoid.dir/src/powerup.c.s
+.PHONY : src/powerup.c.s
 
 src/render.o: src/render.c.o
 .PHONY : src/render.o
@@ -315,12 +363,18 @@ help:
 	@echo "... src/init.o"
 	@echo "... src/init.i"
 	@echo "... src/init.s"
+	@echo "... src/laser.o"
+	@echo "... src/laser.i"
+	@echo "... src/laser.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/physics.o"
 	@echo "... src/physics.i"
 	@echo "... src/physics.s"
+	@echo "... src/powerup.o"
+	@echo "... src/powerup.i"
+	@echo "... src/powerup.s"
 	@echo "... src/render.o"
 	@echo "... src/render.i"
 	@echo "... src/render.s"

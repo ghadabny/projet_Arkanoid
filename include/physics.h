@@ -7,7 +7,7 @@
 #include <stdbool.h>
 #include "globals.h"
 #include "gameState.h"
-
+#include "powerup.h"
 
 void handleCollisionWithBricks();
 

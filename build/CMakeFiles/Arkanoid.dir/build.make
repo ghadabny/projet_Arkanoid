@@ -111,10 +111,24 @@ CMakeFiles/Arkanoid.dir/src/init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Arkanoid.dir/src/init.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ghada/CNAM/C/TP/Arkanoid/src/init.c -o CMakeFiles/Arkanoid.dir/src/init.c.s
 
+CMakeFiles/Arkanoid.dir/src/laser.c.o: CMakeFiles/Arkanoid.dir/flags.make
+CMakeFiles/Arkanoid.dir/src/laser.c.o: ../src/laser.c
+CMakeFiles/Arkanoid.dir/src/laser.c.o: CMakeFiles/Arkanoid.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Arkanoid.dir/src/laser.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Arkanoid.dir/src/laser.c.o -MF CMakeFiles/Arkanoid.dir/src/laser.c.o.d -o CMakeFiles/Arkanoid.dir/src/laser.c.o -c /home/ghada/CNAM/C/TP/Arkanoid/src/laser.c
+
+CMakeFiles/Arkanoid.dir/src/laser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Arkanoid.dir/src/laser.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ghada/CNAM/C/TP/Arkanoid/src/laser.c > CMakeFiles/Arkanoid.dir/src/laser.c.i
+
+CMakeFiles/Arkanoid.dir/src/laser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Arkanoid.dir/src/laser.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ghada/CNAM/C/TP/Arkanoid/src/laser.c -o CMakeFiles/Arkanoid.dir/src/laser.c.s
+
 CMakeFiles/Arkanoid.dir/src/main.c.o: CMakeFiles/Arkanoid.dir/flags.make
 CMakeFiles/Arkanoid.dir/src/main.c.o: ../src/main.c
 CMakeFiles/Arkanoid.dir/src/main.c.o: CMakeFiles/Arkanoid.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Arkanoid.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Arkanoid.dir/src/main.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Arkanoid.dir/src/main.c.o -MF CMakeFiles/Arkanoid.dir/src/main.c.o.d -o CMakeFiles/Arkanoid.dir/src/main.c.o -c /home/ghada/CNAM/C/TP/Arkanoid/src/main.c
 
 CMakeFiles/Arkanoid.dir/src/main.c.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/Arkanoid.dir/src/main.c.s: cmake_force
 CMakeFiles/Arkanoid.dir/src/physics.c.o: CMakeFiles/Arkanoid.dir/flags.make
 CMakeFiles/Arkanoid.dir/src/physics.c.o: ../src/physics.c
 CMakeFiles/Arkanoid.dir/src/physics.c.o: CMakeFiles/Arkanoid.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Arkanoid.dir/src/physics.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Arkanoid.dir/src/physics.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Arkanoid.dir/src/physics.c.o -MF CMakeFiles/Arkanoid.dir/src/physics.c.o.d -o CMakeFiles/Arkanoid.dir/src/physics.c.o -c /home/ghada/CNAM/C/TP/Arkanoid/src/physics.c
 
 CMakeFiles/Arkanoid.dir/src/physics.c.i: cmake_force
@@ -139,10 +153,24 @@ CMakeFiles/Arkanoid.dir/src/physics.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Arkanoid.dir/src/physics.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ghada/CNAM/C/TP/Arkanoid/src/physics.c -o CMakeFiles/Arkanoid.dir/src/physics.c.s
 
+CMakeFiles/Arkanoid.dir/src/powerup.c.o: CMakeFiles/Arkanoid.dir/flags.make
+CMakeFiles/Arkanoid.dir/src/powerup.c.o: ../src/powerup.c
+CMakeFiles/Arkanoid.dir/src/powerup.c.o: CMakeFiles/Arkanoid.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Arkanoid.dir/src/powerup.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Arkanoid.dir/src/powerup.c.o -MF CMakeFiles/Arkanoid.dir/src/powerup.c.o.d -o CMakeFiles/Arkanoid.dir/src/powerup.c.o -c /home/ghada/CNAM/C/TP/Arkanoid/src/powerup.c
+
+CMakeFiles/Arkanoid.dir/src/powerup.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Arkanoid.dir/src/powerup.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ghada/CNAM/C/TP/Arkanoid/src/powerup.c > CMakeFiles/Arkanoid.dir/src/powerup.c.i
+
+CMakeFiles/Arkanoid.dir/src/powerup.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Arkanoid.dir/src/powerup.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ghada/CNAM/C/TP/Arkanoid/src/powerup.c -o CMakeFiles/Arkanoid.dir/src/powerup.c.s
+
 CMakeFiles/Arkanoid.dir/src/render.c.o: CMakeFiles/Arkanoid.dir/flags.make
 CMakeFiles/Arkanoid.dir/src/render.c.o: ../src/render.c
 CMakeFiles/Arkanoid.dir/src/render.c.o: CMakeFiles/Arkanoid.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Arkanoid.dir/src/render.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Arkanoid.dir/src/render.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Arkanoid.dir/src/render.c.o -MF CMakeFiles/Arkanoid.dir/src/render.c.o.d -o CMakeFiles/Arkanoid.dir/src/render.c.o -c /home/ghada/CNAM/C/TP/Arkanoid/src/render.c
 
 CMakeFiles/Arkanoid.dir/src/render.c.i: cmake_force
@@ -156,7 +184,7 @@ CMakeFiles/Arkanoid.dir/src/render.c.s: cmake_force
 CMakeFiles/Arkanoid.dir/src/score.c.o: CMakeFiles/Arkanoid.dir/flags.make
 CMakeFiles/Arkanoid.dir/src/score.c.o: ../src/score.c
 CMakeFiles/Arkanoid.dir/src/score.c.o: CMakeFiles/Arkanoid.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Arkanoid.dir/src/score.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Arkanoid.dir/src/score.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Arkanoid.dir/src/score.c.o -MF CMakeFiles/Arkanoid.dir/src/score.c.o.d -o CMakeFiles/Arkanoid.dir/src/score.c.o -c /home/ghada/CNAM/C/TP/Arkanoid/src/score.c
 
 CMakeFiles/Arkanoid.dir/src/score.c.i: cmake_force
@@ -172,8 +200,10 @@ Arkanoid_OBJECTS = \
 "CMakeFiles/Arkanoid.dir/src/gameState.c.o" \
 "CMakeFiles/Arkanoid.dir/src/globals.c.o" \
 "CMakeFiles/Arkanoid.dir/src/init.c.o" \
+"CMakeFiles/Arkanoid.dir/src/laser.c.o" \
 "CMakeFiles/Arkanoid.dir/src/main.c.o" \
 "CMakeFiles/Arkanoid.dir/src/physics.c.o" \
+"CMakeFiles/Arkanoid.dir/src/powerup.c.o" \
 "CMakeFiles/Arkanoid.dir/src/render.c.o" \
 "CMakeFiles/Arkanoid.dir/src/score.c.o"
 
@@ -183,15 +213,17 @@ Arkanoid_EXTERNAL_OBJECTS =
 Arkanoid: CMakeFiles/Arkanoid.dir/src/gameState.c.o
 Arkanoid: CMakeFiles/Arkanoid.dir/src/globals.c.o
 Arkanoid: CMakeFiles/Arkanoid.dir/src/init.c.o
+Arkanoid: CMakeFiles/Arkanoid.dir/src/laser.c.o
 Arkanoid: CMakeFiles/Arkanoid.dir/src/main.c.o
 Arkanoid: CMakeFiles/Arkanoid.dir/src/physics.c.o
+Arkanoid: CMakeFiles/Arkanoid.dir/src/powerup.c.o
 Arkanoid: CMakeFiles/Arkanoid.dir/src/render.c.o
 Arkanoid: CMakeFiles/Arkanoid.dir/src/score.c.o
 Arkanoid: CMakeFiles/Arkanoid.dir/build.make
 Arkanoid: /usr/lib/x86_64-linux-gnu/libSDL2.so
 Arkanoid: /usr/lib/x86_64-linux-gnu/libSDL2main.a
 Arkanoid: CMakeFiles/Arkanoid.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable Arkanoid"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ghada/CNAM/C/TP/Arkanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable Arkanoid"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Arkanoid.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

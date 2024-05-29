@@ -21,6 +21,14 @@ int colorLetterToIndex(char colorLetter) {
 }
 
 void loadLevel() {
+    // Initialize all bricks to none
+    for (int i = 0; i < BRICK_ROWS; i++) {
+        for (int j = 0; j < BRICKS_PER_ROW; j++) {
+            bricks[i][j].type = BRICK_NONE;
+            bricks[i][j].color = 0; // Default color index, adjust as necessary
+        }
+    }
+
     char levelPath[50];
     sprintf(levelPath, "../levels/level%d.txt", currentLevel);
     FILE* levelFile = fopen(levelPath, "r");
@@ -29,35 +37,51 @@ void loadLevel() {
         exit(1);
     }
 
-    char line[BRICKS_PER_ROW * 2 + 2]; // Assuming 2 characters per brick, +2 for potential newline and null terminator
+    char line[BRICKS_PER_ROW * 2 + 2]; // +2 for newline and null terminator
     int row = 0;
 
     while (fgets(line, sizeof(line), levelFile) != NULL && row < BRICK_ROWS) {
+        printf("Read line: %s\n", line);  // Print each line read from the file
         int col = 0;
-        for (int i = 0; line[i] != '\0' && col < BRICKS_PER_ROW; i += 2) {
-            // Skip newline characters
-            if (line[i] == '\n' || line[i] == '\r') {
+        for (int i = 0; line[i] != '\0' && col < BRICKS_PER_ROW; i++) {
+            if (line[i] == '\n' || line[i] == '\r' || line[i] == ' ') continue;
+
+            char brickTypeChar = line[i];
+            char colorChar = (brickTypeChar == '1') ? line[i + 1] : '\0'; // Only read colorChar for normal bricks
+
+            printf("Read brick type: %c, color: %c at row %d, col %d\n", brickTypeChar, colorChar, row, col);  // Print each character read
+
+            if (brickTypeChar < '0' || brickTypeChar > '3') {
+                fprintf(stderr, "Unexpected brick type '%c' at row %d, col %d\n", brickTypeChar, row, col);
                 continue;
             }
 
-            char brickTypeChar = line[i];
-            char colorChar = line[i + 1];
+            if (brickTypeChar == '1' && colorLetterToIndex(colorChar) == -1) {
+                fprintf(stderr, "Unexpected color '%c' at row %d, col %d\n", colorChar, row, col);
+                continue;
+            }
 
-            // Determine the brick type and color
             switch (brickTypeChar) {
+                case '0':
+                    // Empty space, skip processing
+                    col++;
+                    continue;
                 case '1':
                     bricks[row][col].type = BRICK_NORMAL;
                     bricks[row][col].color = colorLetterToIndex(colorChar);
+                    i++; // Increment to skip colorChar for normal bricks
                     break;
                 case '2':
                     bricks[row][col].type = BRICK_HARD;
+                    bricks[row][col].color = 0; // Assign a default color for hard bricks
                     break;
                 case '3':
                     bricks[row][col].type = BRICK_INDESTRUCTIBLE;
+                    bricks[row][col].color = 0; // Assign a default color for indestructible bricks
                     break;
                 default:
-                    // Handle unexpected brickTypeChar if necessary
-                    break;
+                    fprintf(stderr, "Unexpected brick type '%c' at row %d, col %d\n", brickTypeChar, row, col);
+                    continue;
             }
 
             col++;
@@ -67,6 +91,7 @@ void loadLevel() {
 
     fclose(levelFile);
 }
+
 
 
 void resetGameState() {

@@ -3,7 +3,8 @@
         "game.h": "c",
         "stdlib.h": "c",
         "physics.h": "c",
-        "score.h": "c"
+        "score.h": "c",
+        "powerup.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

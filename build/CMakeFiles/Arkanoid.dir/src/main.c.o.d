@@ -181,5 +181,7 @@ CMakeFiles/Arkanoid.dir/src/main.c.o: \
  /home/ghada/CNAM/C/TP/Arkanoid/include/render.h \
  /home/ghada/CNAM/C/TP/Arkanoid/include/physics.h \
  /home/ghada/CNAM/C/TP/Arkanoid/include/gameState.h \
+ /home/ghada/CNAM/C/TP/Arkanoid/include/powerup.h \
  /home/ghada/CNAM/C/TP/Arkanoid/include/gameState.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/score.h
+ /home/ghada/CNAM/C/TP/Arkanoid/include/score.h \
+ /home/ghada/CNAM/C/TP/Arkanoid/include/powerup.h

@@ -1,5 +1,9 @@
 #include "globals.h"
 
+int playerLives = 3; // Initial number of lives
+bool ballIsSticky = false; // Initial state is not sticky
+bool laserActive = false; 
+
 Brick bricks[BRICK_ROWS][BRICKS_PER_ROW];
 Ball ball = {0};
 SDL_Window* pWindow = NULL;

@@ -9,8 +9,8 @@
 #define FPS 70.0
 #define BRICK_WIDTH 32
 #define BRICK_HEIGHT 16
-#define BRICKS_PER_ROW 10
-#define BRICK_ROWS 10
+#define BRICKS_PER_ROW 19
+#define BRICK_ROWS 20
 
 typedef enum {
     BRICK_NONE,
@@ -19,11 +19,6 @@ typedef enum {
     BRICK_INDESTRUCTIBLE,
 } BrickType;
 
-// typedef struct {
-//     BrickType type;
-//     int hitCount;
-//     int color;
-// } Brick;
 
 typedef struct {
     BrickType type;  // Type of the brick (normal, hard, indestructible)
@@ -34,6 +29,9 @@ typedef struct {
     int animationCounter; // Current frame of the animation
 } Brick;
 
+// extern int playerLives; // Tracks the number of lives the player has
+// extern bool ballIsSticky; // Indicates if the ball will stick to the paddle
+extern bool laserActive; // Indicates if the laser power-up is active
 
 typedef struct {
     double x;

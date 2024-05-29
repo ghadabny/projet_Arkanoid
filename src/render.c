@@ -26,6 +26,12 @@ SDL_Rect srcRectsHardBrick[] = {
     {BRICK_WIDTH*3, BRICK_HEIGHT*2, BRICK_WIDTH, BRICK_HEIGHT},
 	{BRICK_WIDTH*4, BRICK_HEIGHT*2, BRICK_WIDTH, BRICK_HEIGHT},
 	{BRICK_WIDTH*5, BRICK_HEIGHT*2, BRICK_WIDTH, BRICK_HEIGHT}
+    //  {BRICK_WIDTH *8 , POWERUP_HEIGHT*3, POWERUP_WIDTH, POWERUP_H}, 
+	// {BRICK_WIDTH *9, POWERUP_HEIGHT*3, POWERUP_WIDTH, POWERUP_H},
+	// {BRICK_WIDTH *10, POWERUP_HEIGHT*3, POWERUP_WIDTH, POWERUP_H},
+    // {BRICK_WIDTH *11, POWERUP_HEIGHT*3, POWERUP_WIDTH, POWERUP_H},
+	// {BRICK_WIDTH *12, POWERUP_HEIGHT*3, POWERUP_WIDTH, POWERUP_H},
+	// {BRICK_WIDTH *13, POWERUP_HEIGHT*3, POWERUP_WIDTH, POWERUP_H},
 };
 
 SDL_Rect srcRectsIndestructableBrick[] = {
@@ -115,27 +121,7 @@ void draw()
 }
 
 
-// void drawBricks() {
-//     for (int i = 0; i < BRICK_ROWS; i++) {
-//         for (int j = 0; j < BRICKS_PER_ROW; j++) {
-//             if (bricks[i][j].type != BRICK_NONE && bricks[i][j].color >= 0) {
-//                 SDL_Rect brickRect = { j * BRICK_WIDTH, i * BRICK_HEIGHT, BRICK_WIDTH, BRICK_HEIGHT };
-                
-//                 SDL_Rect srcRect = srcRectsNormalBrick[bricks[i][j].color];
-                
 
-
-                
-//                 SDL_BlitSurface(brickSpriteSheet, &srcRect, win_surf, &brickRect);
-//             }
-            
-//         }
-//     }
-// }
-
-
-
-// Place this in a globally accessible location
 
 void updateAnimations() {
     const int FRAME_DELAY = 3; // Number of frames to wait before switching to the next animation frame
@@ -173,7 +159,7 @@ void drawBricks() {
             if (brick->type == BRICK_NONE) continue;
 
             SDL_Rect brickRect = {j * BRICK_WIDTH, i * BRICK_HEIGHT + SCOREBOARD_HEIGHT, BRICK_WIDTH, BRICK_HEIGHT};
-            SDL_Rect srcRect ;
+            SDL_Rect srcRect;
 
             switch (brick->type) {
                 case BRICK_NORMAL:
