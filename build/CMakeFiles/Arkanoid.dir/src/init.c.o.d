@@ -1,6 +1,6 @@
 CMakeFiles/Arkanoid.dir/src/init.c.o: \
- /home/ghada/CNAM/C/TP/Arkanoid/src/init.c /usr/include/stdc-predef.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/init.h /usr/include/SDL2/SDL.h \
+ /home/omoughazli/projet_Arkanoid/src/init.c /usr/include/stdc-predef.h \
+ /home/omoughazli/projet_Arkanoid/include/init.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h \
  /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
@@ -176,4 +176,4 @@ CMakeFiles/Arkanoid.dir/src/init.c.o: \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/globals.h
+ /home/omoughazli/projet_Arkanoid/include/globals.h

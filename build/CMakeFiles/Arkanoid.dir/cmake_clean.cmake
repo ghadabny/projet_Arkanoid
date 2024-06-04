@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Arkanoid.dir/src/laser.c.o.d"
   "CMakeFiles/Arkanoid.dir/src/main.c.o"
   "CMakeFiles/Arkanoid.dir/src/main.c.o.d"
+  "CMakeFiles/Arkanoid.dir/src/menu.c.o"
+  "CMakeFiles/Arkanoid.dir/src/menu.c.o.d"
   "CMakeFiles/Arkanoid.dir/src/physics.c.o"
   "CMakeFiles/Arkanoid.dir/src/physics.c.o.d"
   "CMakeFiles/Arkanoid.dir/src/powerup.c.o"

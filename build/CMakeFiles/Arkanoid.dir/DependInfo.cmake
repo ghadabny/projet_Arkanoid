@@ -8,15 +8,16 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ghada/CNAM/C/TP/Arkanoid/src/gameState.c" "CMakeFiles/Arkanoid.dir/src/gameState.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/gameState.c.o.d"
-  "/home/ghada/CNAM/C/TP/Arkanoid/src/globals.c" "CMakeFiles/Arkanoid.dir/src/globals.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/globals.c.o.d"
-  "/home/ghada/CNAM/C/TP/Arkanoid/src/init.c" "CMakeFiles/Arkanoid.dir/src/init.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/init.c.o.d"
-  "/home/ghada/CNAM/C/TP/Arkanoid/src/laser.c" "CMakeFiles/Arkanoid.dir/src/laser.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/laser.c.o.d"
-  "/home/ghada/CNAM/C/TP/Arkanoid/src/main.c" "CMakeFiles/Arkanoid.dir/src/main.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/main.c.o.d"
-  "/home/ghada/CNAM/C/TP/Arkanoid/src/physics.c" "CMakeFiles/Arkanoid.dir/src/physics.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/physics.c.o.d"
-  "/home/ghada/CNAM/C/TP/Arkanoid/src/powerup.c" "CMakeFiles/Arkanoid.dir/src/powerup.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/powerup.c.o.d"
-  "/home/ghada/CNAM/C/TP/Arkanoid/src/render.c" "CMakeFiles/Arkanoid.dir/src/render.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/render.c.o.d"
-  "/home/ghada/CNAM/C/TP/Arkanoid/src/score.c" "CMakeFiles/Arkanoid.dir/src/score.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/score.c.o.d"
+  "/home/omoughazli/projet_Arkanoid/src/gameState.c" "CMakeFiles/Arkanoid.dir/src/gameState.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/gameState.c.o.d"
+  "/home/omoughazli/projet_Arkanoid/src/globals.c" "CMakeFiles/Arkanoid.dir/src/globals.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/globals.c.o.d"
+  "/home/omoughazli/projet_Arkanoid/src/init.c" "CMakeFiles/Arkanoid.dir/src/init.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/init.c.o.d"
+  "/home/omoughazli/projet_Arkanoid/src/laser.c" "CMakeFiles/Arkanoid.dir/src/laser.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/laser.c.o.d"
+  "/home/omoughazli/projet_Arkanoid/src/main.c" "CMakeFiles/Arkanoid.dir/src/main.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/main.c.o.d"
+  "/home/omoughazli/projet_Arkanoid/src/menu.c" "CMakeFiles/Arkanoid.dir/src/menu.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/menu.c.o.d"
+  "/home/omoughazli/projet_Arkanoid/src/physics.c" "CMakeFiles/Arkanoid.dir/src/physics.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/physics.c.o.d"
+  "/home/omoughazli/projet_Arkanoid/src/powerup.c" "CMakeFiles/Arkanoid.dir/src/powerup.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/powerup.c.o.d"
+  "/home/omoughazli/projet_Arkanoid/src/render.c" "CMakeFiles/Arkanoid.dir/src/render.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/render.c.o.d"
+  "/home/omoughazli/projet_Arkanoid/src/score.c" "CMakeFiles/Arkanoid.dir/src/score.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/score.c.o.d"
   )
 
 # Targets to which this target links.

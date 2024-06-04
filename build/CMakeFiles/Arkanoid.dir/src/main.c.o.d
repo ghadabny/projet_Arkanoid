@@ -1,8 +1,8 @@
 CMakeFiles/Arkanoid.dir/src/main.c.o: \
- /home/ghada/CNAM/C/TP/Arkanoid/src/main.c /usr/include/stdc-predef.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/globals.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h \
+ /home/omoughazli/projet_Arkanoid/src/main.c /usr/include/stdc-predef.h \
+ /home/omoughazli/projet_Arkanoid/include/globals.h \
+ /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
  /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
  /usr/include/SDL2/close_code.h /usr/include/x86_64-linux-gnu/sys/types.h \
@@ -176,12 +176,13 @@ CMakeFiles/Arkanoid.dir/src/main.c.o: \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/init.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/globals.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/render.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/physics.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/gameState.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/powerup.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/gameState.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/score.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/powerup.h
+ /home/omoughazli/projet_Arkanoid/include/init.h \
+ /home/omoughazli/projet_Arkanoid/include/globals.h \
+ /home/omoughazli/projet_Arkanoid/include/render.h \
+ /home/omoughazli/projet_Arkanoid/include/physics.h \
+ /home/omoughazli/projet_Arkanoid/include/gameState.h \
+ /home/omoughazli/projet_Arkanoid/include/powerup.h \
+ /home/omoughazli/projet_Arkanoid/include/gameState.h \
+ /home/omoughazli/projet_Arkanoid/include/score.h \
+ /home/omoughazli/projet_Arkanoid/include/powerup.h \
+ /home/omoughazli/projet_Arkanoid/include/menu.h /usr/include/SDL2/SDL.h

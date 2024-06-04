@@ -1,4 +1,4 @@
-# Install script for directory: /home/ghada/CNAM/C/TP/Arkanoid
+# Install script for directory: /home/omoughazli/projet_Arkanoid
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ghada/CNAM/C/TP/Arkanoid/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/omoughazli/projet_Arkanoid/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
