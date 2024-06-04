@@ -4,7 +4,8 @@
         "stdlib.h": "c",
         "physics.h": "c",
         "score.h": "c",
-        "powerup.h": "c"
+        "powerup.h": "c",
+        "menu": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

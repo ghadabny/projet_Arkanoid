@@ -184,4 +184,6 @@ CMakeFiles/Arkanoid.dir/src/main.c.o: \
  /home/ghada/CNAM/C/TP/Arkanoid/include/powerup.h \
  /home/ghada/CNAM/C/TP/Arkanoid/include/gameState.h \
  /home/ghada/CNAM/C/TP/Arkanoid/include/score.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/powerup.h
+ /home/ghada/CNAM/C/TP/Arkanoid/include/powerup.h \
+ /home/ghada/CNAM/C/TP/Arkanoid/include/menu.h /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_ttf.h /usr/include/SDL2/SDL.h

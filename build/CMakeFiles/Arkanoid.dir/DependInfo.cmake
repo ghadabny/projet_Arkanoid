@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ghada/CNAM/C/TP/Arkanoid/src/init.c" "CMakeFiles/Arkanoid.dir/src/init.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/init.c.o.d"
   "/home/ghada/CNAM/C/TP/Arkanoid/src/laser.c" "CMakeFiles/Arkanoid.dir/src/laser.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/laser.c.o.d"
   "/home/ghada/CNAM/C/TP/Arkanoid/src/main.c" "CMakeFiles/Arkanoid.dir/src/main.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/main.c.o.d"
+  "/home/ghada/CNAM/C/TP/Arkanoid/src/menu.c" "CMakeFiles/Arkanoid.dir/src/menu.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/menu.c.o.d"
   "/home/ghada/CNAM/C/TP/Arkanoid/src/physics.c" "CMakeFiles/Arkanoid.dir/src/physics.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/physics.c.o.d"
   "/home/ghada/CNAM/C/TP/Arkanoid/src/powerup.c" "CMakeFiles/Arkanoid.dir/src/powerup.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/powerup.c.o.d"
   "/home/ghada/CNAM/C/TP/Arkanoid/src/render.c" "CMakeFiles/Arkanoid.dir/src/render.c.o" "gcc" "CMakeFiles/Arkanoid.dir/src/render.c.o.d"
