@@ -5,14 +5,14 @@ int activePowerUps = 0;
 
 SDL_Rect srcRectsSlow[]={
     {BRICK_WIDTH *8 , 0, BRICK_WIDTH, BRICK_HEIGHT}, 
-	{BRICK_WIDTH *8 , 0, BRICK_WIDTH, BRICK_HEIGHT},
-	{BRICK_WIDTH *8 , 0, BRICK_WIDTH, BRICK_HEIGHT},
-    {BRICK_WIDTH *8 , 0, BRICK_WIDTH, BRICK_HEIGHT},
-	{BRICK_WIDTH *8 , 0, BRICK_WIDTH, BRICK_HEIGHT},
-	{BRICK_WIDTH *8 , 0, BRICK_WIDTH, BRICK_HEIGHT},
-    {BRICK_WIDTH *8 , 0,BRICK_WIDTH, BRICK_HEIGHT},
-	{BRICK_WIDTH *8 , 0, BRICK_WIDTH, BRICK_HEIGHT},
-	{BRICK_WIDTH *8 , 0, BRICK_WIDTH, BRICK_HEIGHT}
+	{BRICK_WIDTH *9 , 0, BRICK_WIDTH, BRICK_HEIGHT},
+	{BRICK_WIDTH *10 , 0, BRICK_WIDTH, BRICK_HEIGHT},
+    {BRICK_WIDTH *11 , 0, BRICK_WIDTH, BRICK_HEIGHT},
+	{BRICK_WIDTH *12 , 0, BRICK_WIDTH, BRICK_HEIGHT},
+	{BRICK_WIDTH *13 , 0, BRICK_WIDTH, BRICK_HEIGHT},
+    {BRICK_WIDTH *14 , 0,BRICK_WIDTH, BRICK_HEIGHT},
+	{BRICK_WIDTH *15 , 0, BRICK_WIDTH, BRICK_HEIGHT},
+	{BRICK_WIDTH *16 , 0, BRICK_WIDTH, BRICK_HEIGHT}
     };
 
 SDL_Rect srcRectsCatch[]={
@@ -131,13 +131,13 @@ SDL_Rect* getCurrentPowerUpSprite(PowerUp* powerUp) {
             return &srcRectsSlow[powerUp->animationFrame % 9];
         case POWERUP_CATCH:
             return &srcRectsCatch[powerUp->animationFrame % 9];
-        case POWERUP_LASER:
+       /* case POWERUP_LASER:
             return &srcRectsLaser[powerUp->animationFrame % 9];
         case POWERUP_EXPAND:
             return &srcRectsExpand[powerUp->animationFrame % 9];
         case POWERUP_DIVIDE:
             return &srcRectsDivide[powerUp->animationFrame % 9];
-        case POWERUP_BREAK:
+        */case POWERUP_BREAK:
             return &srcRectsBreak[powerUp->animationFrame % 9];
         case POWERUP_PLAYER:
             return &srcRectsPlayer[powerUp->animationFrame % 9];
@@ -192,7 +192,7 @@ void renderPowerUps() {
 // This would be part of your game loop or a specific collision detection function
 void handlePowerUpCollection() {
     SDL_Rect paddleRect = {x_vault, win_surf->h - scrVaiss.h, scrVaiss.w, scrVaiss.h}; // Assuming paddle dimensions are in scrVaiss
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < MAX_POWERUPS; i++) {
         if (powerUps[i].isActive) {
             SDL_Rect powerUpRect = {powerUps[i].x, powerUps[i].y, POWERUP_WIDTH, POWERUP_HEIGHT}; // Define POWERUP_WIDTH and POWERUP_HEIGHT as needed
             if (SDL_HasIntersection(&paddleRect, &powerUpRect)) {
@@ -201,32 +201,63 @@ void handlePowerUpCollection() {
                 activePowerUps--;
 
                 switch (powerUps[i].type) {
-                    case POWERUP_LASER:
-                        // ajout bonus
-                        break;
                     case POWERUP_PLAYER:
-                        // ajout bonus
+                        addExtraLife();
                         break;
                     case POWERUP_CATCH:
-                        // ajout bonus
-                        break;
-                    case POWERUP_DIVIDE:
-                        // ajout bonus
-                        break;
-                    case POWERUP_EXPAND:
-                        // ajout bonus
+                        activateCatch();
                         break;
                     case POWERUP_BREAK:
-                        // ajout bonus
+                        breakBricks();
                         break;
                     case POWERUP_SLOW:
-                        // ajout bonus
+                        slowBall();
                         break;
                 }
             }
         }
     }
 }
+
+
+
+void clearPowerUps() {
+    for (int i = 0; i < MAX_POWERUPS; i++) {
+        powerUps[i].isActive = false;
+    }
+    activePowerUps = 0;
+}
+
+
+
+void addExtraLife() {
+    playerLives++;
+    printf("Extra life added! Lives remaining: %d\n", playerLives);
+}
+
+
+void activateCatch() {
+    ballIsSticky = true;
+}
+
+void releaseBall() {
+    if (ballIsSticky && ball.vx == 0 && ball.vy == 0) {
+        ball.vx = 1.0; // Set the initial ball velocity
+        ball.vy = 1.4;
+        ballIsSticky = false; // Release the ball from being sticky
+    }
+} 
+
+void breakBricks() {
+    loadNextLevel();
+
+}
+
+void slowBall() {
+    ball.vx *= 0.5; // Slow down the ball by 50%
+    ball.vy *= 0.5;
+}
+
 
 
 

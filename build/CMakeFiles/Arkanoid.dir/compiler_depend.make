@@ -214,7 +214,9 @@ CMakeFiles/Arkanoid.dir/src/gameState.c.o: ../src/gameState.c \
   /usr/include/SDL2/SDL_locale.h \
   /usr/include/SDL2/SDL_misc.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
-  ../include/globals.h
+  ../include/globals.h \
+  ../include/powerup.h \
+  ../include/init.h
 
 CMakeFiles/Arkanoid.dir/src/globals.c.o: ../src/globals.c \
   /usr/include/stdc-predef.h \

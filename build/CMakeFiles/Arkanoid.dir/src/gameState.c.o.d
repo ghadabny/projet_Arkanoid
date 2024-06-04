@@ -177,4 +177,6 @@ CMakeFiles/Arkanoid.dir/src/gameState.c.o: \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /home/ghada/CNAM/C/TP/Arkanoid/include/globals.h
+ /home/ghada/CNAM/C/TP/Arkanoid/include/globals.h \
+ /home/ghada/CNAM/C/TP/Arkanoid/include/powerup.h \
+ /home/ghada/CNAM/C/TP/Arkanoid/include/init.h

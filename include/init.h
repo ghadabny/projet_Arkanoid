@@ -9,5 +9,6 @@
 
 void initBricks();
 void init();
+//void reinitGame();
 
 #endif // INIT_H

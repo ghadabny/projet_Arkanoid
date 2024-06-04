@@ -1,5 +1,3 @@
-
-
 #include "physics.h"
 #include "gameState.h"
 #include "score.h"
@@ -8,18 +6,17 @@
 bool checkLevelCompletion() {
     for (int i = 0; i < BRICK_ROWS; i++) {
         for (int j = 0; j < BRICKS_PER_ROW; j++) {
-            // If there's at least one brick that's neither indestructible nor "none", the level isn't complete
             if (bricks[i][j].type != BRICK_INDESTRUCTIBLE && bricks[i][j].type != BRICK_NONE) {
-                return false; // Level is not complete
+                return false;
             }
         }
     }
-    return true; // No destructible bricks left, level is complete
+    return true;
 }
 
 void handleCollisionWithBricks() {
     bool collisionDetected = false;
-    int hitsRequiredForHardBrick = 2; // Default for rounds 1 to 8
+    int hitsRequiredForHardBrick = 2;
 
     if (currentLevel >= 9 && currentLevel <= 16) {
         hitsRequiredForHardBrick = 3;
@@ -29,12 +26,12 @@ void handleCollisionWithBricks() {
         hitsRequiredForHardBrick = 5;
     }
 
-    SDL_Rect ballRect = { (int)ball.x, (int)ball.y, 24, 24 }; // Ensure BALL_WIDTH and BALL_HEIGHT are correctly defined
+    SDL_Rect ballRect = { (int)ball.x, (int)ball.y, 24, 24 };
 
     for (int i = 0; i < BRICK_ROWS; i++) {
         for (int j = 0; j < BRICKS_PER_ROW; j++) {
-            Brick *brick = &bricks[i][j]; // Pointer to the current brick
-            if (brick->type == BRICK_NONE) continue; // Skip if brick is already destroyed
+            Brick *brick = &bricks[i][j];
+            if (brick->type == BRICK_NONE) continue;
 
             SDL_Rect brickRect = { j * BRICK_WIDTH, i * BRICK_HEIGHT + SCOREBOARD_HEIGHT, BRICK_WIDTH, BRICK_HEIGHT };
 
@@ -43,44 +40,36 @@ void handleCollisionWithBricks() {
 
                 switch (brick->type) {
                     case BRICK_NORMAL:
-                        brick->type = BRICK_NONE; // Destroy the brick immediately
+                        brick->type = BRICK_NONE;
                         updateScore(50);
-                        //added
-                        if ((rand() % 3) == 0) { // 25% chance to spawn a power-up
-                        PowerUpType type = rand() % POWERUP_TOTAL; // Randomly select a power-up type
-                        spawnPowerUp(brickRect.x + BRICK_WIDTH / 2, brickRect.y + BRICK_HEIGHT / 2, type); // Spawn at the brick's center
-                        }//spawnPowerUp(double x, double y, PowerUpType type)
-                         // Update score for destroying a normal brick
+                        if ((rand() % 4) == 0) {
+                            PowerUpType type = rand() % POWERUP_TOTAL;
+                            spawnPowerUp(brickRect.x + BRICK_WIDTH / 2, brickRect.y + BRICK_HEIGHT / 2, type);
+                        }
                         break;
                     case BRICK_HARD:
                         brick->shouldAnimate = true;
                         brick->animationFrame = 0;
-                        brick->hitCount++; // Increment hit count for hard bricks
+                        brick->hitCount++;
                         if (brick->hitCount >= hitsRequiredForHardBrick) {
                             brick->type = BRICK_NONE;
-                             // Destroy the hard brick once hit count exceeds required hits
-                            updateScore(100*currentLevel);
-                             // Update score for destroying a hard brick
+                            updateScore(100 * currentLevel);
                         }
                         break;
                     case BRICK_INDESTRUCTIBLE:
                         brick->shouldAnimate = true;
                         brick->animationFrame = 0;
-
                         break;
-                    // Handle other brick types if necessary
                 }
 
-                // Adjust ball's position slightly before bouncing to prevent sticking to the brick
                 if (ball.vy > 0) {
-                    ball.y = brickRect.y - 24 - 1; // Adjust for ball height and ensure it's just above the brick
+                    ball.y = brickRect.y - 24 - 1;
                 } else {
-                    ball.y = brickRect.y + BRICK_HEIGHT + 1; // Place it just below the brick
+                    ball.y = brickRect.y + BRICK_HEIGHT + 1;
                 }
 
-                ball.vy *= -1; // Invert ball's vertical velocity to bounce back
+                ball.vy *= -1;
 
-                // After handling the collision, exit the loop to avoid multiple bounces in one frame
                 goto collisionHandled;
             }
         }
@@ -88,22 +77,8 @@ void handleCollisionWithBricks() {
 
 collisionHandled:
     if (collisionDetected) {
-        // Check if all bricks have been cleared
-        bool levelCleared = true;
-        for (int i = 0; i < BRICK_ROWS; i++) {
-            for (int j = 0; j < BRICKS_PER_ROW; j++) {
-                if (bricks[i][j].type != BRICK_NONE) {
-                    levelCleared = false;
-                    break;
-                }
-            }
-            if (!levelCleared) break;
-        }
-
-        //Load the next level if all bricks are cleared
-        if (collisionDetected && checkLevelCompletion()) {
+        if (checkLevelCompletion()) {
             loadNextLevel();
         }
     }
 }
-

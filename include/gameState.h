@@ -11,5 +11,8 @@ int colorLetterToIndex(char colorLetter) ;
 void loadLevel();
 void resetGameState();
 void loadNextLevel();
+void resetBallAndPaddle();
+void handleBallOutOfBounds();
+void reinitGame();
 
 #endif // GAMESTATE_H

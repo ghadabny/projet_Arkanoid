@@ -18,5 +18,7 @@ void initializeScore();
 void updateScore(int points);
 void updateHighScore();
 void drawScore(SDL_Surface *surface, int score, int x, int y);
+void drawText(SDL_Surface *surface, const char *text, int x, int y);
+void drawScoreboard(SDL_Surface* surface, int currentScore, int highScore);
 
 #endif // SCORE_H

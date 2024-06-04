@@ -37,12 +37,20 @@ extern PowerUp powerUps[MAX_POWERUPS]; // Declaration
 extern int activePowerUps; 
 
 
-// Function prototypes
+
 void spawnPowerUp(double x, double y, PowerUpType type);
+void initializePowerUps();
+SDL_Rect* getCurrentPowerUpSprite(PowerUp* powerUp);
 void updatePowerUps();
 void renderPowerUps();
 void handlePowerUpCollection();
-void initializePowerUps();
-SDL_Rect* getCurrentPowerUpSprite(PowerUp* powerUp);
-
+void clearPowerUps();
+void activateLaser();
+void addExtraLife();
+void catchBall();
+void activateDivide();
+void expandPaddle();
+void breakBricks();
+void slowBall();
+void releaseBall();
 #endif // POWERUP_H

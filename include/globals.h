@@ -19,7 +19,6 @@ typedef enum {
     BRICK_INDESTRUCTIBLE,
 } BrickType;
 
-
 typedef struct {
     BrickType type;  // Type of the brick (normal, hard, indestructible)
     int hitCount;    // Number of hits the brick has taken (for hard bricks)
@@ -29,8 +28,6 @@ typedef struct {
     int animationCounter; // Current frame of the animation
 } Brick;
 
-// extern int playerLives; // Tracks the number of lives the player has
-// extern bool ballIsSticky; // Indicates if the ball will stick to the paddle
 extern bool laserActive; // Indicates if the laser power-up is active
 
 typedef struct {
@@ -39,7 +36,6 @@ typedef struct {
     double vx;
     double vy;
 } Ball;
-
 
 extern Brick bricks[BRICK_ROWS][BRICKS_PER_ROW];
 extern Ball ball;
@@ -61,6 +57,10 @@ extern Uint64 prev, now; // timers
 extern double delta_t;  // durée frame en ms
 extern int x_vault;
 
-extern int SCOREBOARD_HEIGHT; 
+extern int SCOREBOARD_HEIGHT;
+
+extern bool ballIsSticky;
+
+extern int playerLives; // Add this line for player lives
 
 #endif // GLOBALS_H
